@@ -1,4 +1,5 @@
 import { Note } from './note.model';
+import {ScaleInterface} from "../interfaces/scale.interface";
 
 export class MinorScale extends Note {
     name: string;
@@ -24,7 +25,7 @@ export class MinorScale extends Note {
         this.scale = this.notes.map(n => n.note).join(', ');
     }
 
-    getScale(): { name: string, notes: { note: string, interval: string }[], scale: string } {
+    getScale(): ScaleInterface {
         return {
             name: this.name,
             notes: this.notes,

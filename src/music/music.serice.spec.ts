@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { MusicService } from './music.service';
-import { MajorScaleInterface } from './interfaces/major-scale.interface';
+import { ScaleInterface } from './interfaces/scale.interface';
 
 describe('MusicService', () => {
     let service: MusicService;
@@ -18,7 +18,7 @@ describe('MusicService', () => {
     });
 
     it('should return the correct major scale for C', () => {
-        const result: MajorScaleInterface = service.getMajorScale('C');
+        const result: ScaleInterface = service.getMajorScale('C');
         expect(result).toEqual({
             name: 'C Major',
             notes: [
@@ -35,7 +35,7 @@ describe('MusicService', () => {
     });
 
     it('should return the correct major scale for G', () => {
-        const result: MajorScaleInterface = service.getMajorScale('G');
+        const result: ScaleInterface = service.getMajorScale('G');
         expect(result).toEqual({
             name: 'G Major',
             notes: [
