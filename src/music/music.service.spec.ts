@@ -50,4 +50,38 @@ describe('MusicService', () => {
             scale: 'G, A, B, C, D, E, F#',
         });
     });
+
+    it('should return the correct minor scale for A', () => {
+        const result: ScaleInterface = service.getMinorScale('A');
+        expect(result).toEqual({
+            name: 'A Minor',
+            notes: [
+                { note: 'A', interval: 'Tônica' },
+                { note: 'B', interval: 'Segunda maior' },
+                { note: 'C', interval: 'Terça menor' },
+                { note: 'D', interval: 'Quarta justa' },
+                { note: 'E', interval: 'Quinta justa' },
+                { note: 'F', interval: 'Sexta menor' },
+                { note: 'G', interval: 'Sétima menor' },
+            ],
+            scale: 'A, B, C, D, E, F, G',
+        });
+    });
+
+    it('should return the correct minor scale for E', () => {
+        const result: ScaleInterface = service.getMinorScale('E');
+        expect(result).toEqual({
+            name: 'E Minor',
+            notes: [
+                { note: 'E', interval: 'Tônica' },
+                { note: 'F#', interval: 'Segunda maior' },
+                { note: 'G', interval: 'Terça menor' },
+                { note: 'A', interval: 'Quarta justa' },
+                { note: 'B', interval: 'Quinta justa' },
+                { note: 'C', interval: 'Sexta menor' },
+                { note: 'D', interval: 'Sétima menor' },
+            ],
+            scale: 'E, F#, G, A, B, C, D',
+        });
+    });
 });

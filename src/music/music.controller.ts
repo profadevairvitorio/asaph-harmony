@@ -13,4 +13,13 @@ export class MusicController {
     } {
         return this.musicService.getMajorScale(note);
     }
+
+    @Get('scale/minor')
+    getMinorScale(@Query('note') note: string): {
+        name: string;
+        notes: { note: string; interval: string }[];
+        scale: string;
+    } {
+        return this.musicService.getMinorScale(note);
+    }
 }
